@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/trans_12px"
+        android:paddingLeft="@dimen/trans_20px"
+        android:paddingRight="@dimen/trans_20px"
+        android:paddingTop="@dimen/trans_12px">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="许攸"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/text_trans_24px"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_company_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上海外滩18号"
+            android:textColor="@color/color_999999"
+            android:textSize="@dimen/text_trans_22px"/>
+    </LinearLayout>
+
+    <View style="@style/line_hor"/>
+</LinearLayout>

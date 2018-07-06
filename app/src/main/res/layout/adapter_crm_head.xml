@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:tag="sticky">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/trans_67px"
+        android:background="#f0f0f0"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/trans_20px"
+        android:paddingRight="@dimen/trans_20px"
+        >
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="重点客户"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/text_trans_28px"/>
+    </LinearLayout>
+</LinearLayout>

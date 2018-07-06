@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:focusable="true"
+              android:focusableInTouchMode="true"
+              android:orientation="vertical">
+
+    <include layout="@layout/include_toolbar_with_statusbar"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.yanzhenjie.recyclerview.swipe.widget.StickyNestedScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/include_tv_search"/>
+
+                <LinearLayout
+                    android:id="@+id/layout_buy"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/trans_88px"
+                    android:background="@color/white"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/trans_20px"
+                    android:paddingRight="@dimen/trans_20px">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="@dimen/trans_20px"
+                        android:src="@drawable/crm1"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="买家"
+                            android:textColor="@color/color_333333"
+                            android:textSize="@dimen/text_trans_30px"/>
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:src="@drawable/right_arrow"/>
+                </LinearLayout>
+
+                <View style="@style/line_hor"/>
+
+                <LinearLayout
+                    android:id="@+id/layout_sale"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/trans_88px"
+                    android:background="@color/white"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/trans_20px"
+                    android:paddingRight="@dimen/trans_20px">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="@dimen/trans_20px"
+                        android:src="@drawable/crm2"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="卖家"
+                            android:textColor="@color/color_333333"
+                            android:textSize="@dimen/text_trans_30px"/>
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:src="@drawable/right_arrow"/>
+                </LinearLayout>
+
+                <View style="@style/line_hor"/>
+
+                <LinearLayout
+                    android:id="@+id/layout_sale_order"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/trans_88px"
+                    android:background="@color/white"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/trans_20px"
+                    android:paddingRight="@dimen/trans_20px">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="@dimen/trans_20px"
+                        android:src="@drawable/crm3"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="销售单"
+                            android:textColor="@color/color_333333"
+                            android:textSize="@dimen/text_trans_30px"/>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:src="@drawable/right_arrow"/>
+                </LinearLayout>
+
+                <View style="@style/line_hor"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                </android.support.v7.widget.RecyclerView>
+            </LinearLayout>
+        </com.yanzhenjie.recyclerview.swipe.widget.StickyNestedScrollView>
+
+        <com.fivefivelike.mybaselibrary.view.WaveSideBar
+            android:id="@+id/side_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingRight="@dimen/trans_20px"
+            app:sidebar_lazy_respond="false"
+            app:sidebar_max_offset="80dp"
+            app:sidebar_position="right"
+            app:sidebar_text_alignment="center"
+            app:sidebar_text_color="#8D6E63"
+            app:sidebar_text_size="14sp"/>
+    </FrameLayout>
+</LinearLayout>

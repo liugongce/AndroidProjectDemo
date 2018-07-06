@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#ffffff</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="toolbar_text_color">#ffffff</color>
+    <color name="basic_wheelview_color">#333333</color>
+    <color name="basic_line">#e5e5e5</color>
+    <color name="choose_dialog_content_color">@color/trans_333333</color>
+
+
+    <!--通用资源-->
+    <color name="transparent_50">#77000000</color>
+    <color name="trans_333333">#333333</color>
+    <color name="transparent">#00000000</color>
+
+    <!--纯色-->
+    <color name="black">#000000</color>
+    <color name="blue">#0000FF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="red">#FF0000</color>
+    <color name="grey">#C0C0C0</color>
+    <color name="green">#00FF00</color>
+</resources>

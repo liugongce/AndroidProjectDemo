@@ -1,0 +1,63 @@
+package com.fivefivelike.mybaselibrary.view;
+
+import android.content.Context;
+import android.content.res.TypedArray;
+import android.util.AttributeSet;
+import android.widget.RelativeLayout;
+
+import com.fivefivelike.mybaselibrary.R;
+
+
+/**
+ * package : com.fivefivelike.jinyingwu.widget<br>
+ * description:<B>长宽指定比例的布局</B><br>
+ * 通过whichIsFinal指定宽或高为固定的(不指定则为宽).<br>
+ * 通过percentage指定比例,可变长度=percentage*固定长度<br>
+ * data : 2017/11/9 下午4:52<br>
+ *
+ * @author XieGuoKang
+ */
+
+public class PercentageRelativeLayout extends RelativeLayout {
+    private static final int WHICH_IS_FINAL_WIDTH = 0;
+    private static final int WHICH_IS_FINAL_HEIGHT = 1;
+    private int whichIsFinal;
+    int widWeight;
+    int heiWeight;
+
+    public PercentageRelativeLayout(Context context) {
+        this(context, null);
+    }
+
+    public PercentageRelativeLayout(Context context, AttributeSet attrs) {
+        this(context, attrs, 0);
+    }
+
+    public PercentageRelativeLayout(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.PercentageRelativeLayout, 0, defStyle);
+        whichIsFinal = ta.getInt(R.styleable.PercentageRelativeLayout_whichIsFinal, WHICH_IS_FINAL_WIDTH);
+        widWeight = ta.getInteger(R.styleable.PercentageRelativeLayout_wid_weight, 1);
+        heiWeight = ta.getInteger(R.styleable.PercentageRelativeLayout_hei_weight, 1);
+        ta.recycle();
+    }
+
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        switch (whichIsFinal) {
+            case WHICH_IS_FINAL_WIDTH: {
+                int width = MeasureSpec.getSize(widthMeasureSpec);
+                int height = width * heiWeight / widWeight;
+                super.onMeasure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY));
+                break;
+            }
+            case WHICH_IS_FINAL_HEIGHT: {
+                int height = MeasureSpec.getSize(heightMeasureSpec);
+                int width = height * widWeight / heiWeight;
+                super.onMeasure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY));
+                break;
+            }
+        }
+    }
+}
